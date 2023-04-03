@@ -3,10 +3,10 @@ import 'package:table_calendar/table_calendar.dart';
 
 class MainCalendar extends StatelessWidget {
   final OnDaySelected onDaySelected;
-  final DateTime selectedDAte;
+  final DateTime selectedDate;
 
   MainCalendar(
-      {Key? key, required this.onDaySelected, required this.selectedDAte})
+      {Key? key, required this.onDaySelected, required this.selectedDate})
       : super(key: key);
 
   @override
@@ -14,9 +14,9 @@ class MainCalendar extends StatelessWidget {
     return TableCalendar(
       onDaySelected: onDaySelected,
       selectedDayPredicate: (date) =>
-          date.year == selectedDAte.year &&
-          date.month == selectedDAte.month &&
-          date.day == selectedDAte.day,
+          date.year == selectedDate.year &&
+          date.month == selectedDate.month &&
+          date.day == selectedDate.day,
       firstDay: DateTime(1800, 1, 1),
       lastDay: DateTime(2100, 1, 1),
       focusedDay: DateTime.now(),
