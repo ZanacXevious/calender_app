@@ -15,8 +15,43 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
       child: Container(
         height: MediaQuery.of(context).size.height / 2,
         color: Colors.white,
-        child: CustomTextField(label: '시작시간'),
+        padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: CustomTextField(
+                    label: '시작시간',
+                    isTime: true,
+                  ),
+                ),
+                const SizedBox(width: 8.0),
+                Expanded(
+                  child: CustomTextField(
+                    label: '종료시간',
+                    isTime: true,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8.0),
+            Expanded(
+              child: CustomTextField(
+                label: '내용',
+                isTime: false,
+              ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child:
+                  ElevatedButton(onPressed: onSavePressed, child: Text('저장')),
+            ),
+          ],
+        ),
       ),
     );
   }
+
+  void onSavePressed() {}
 }
